@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+}
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+   
+}
+ 
+.tips_form {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  margin: 10px ;
+}
+.countrytips {
+  display: flex;
+  justify-content: space-evenly;
+}
+.timestamp{
+  border-top: 1px solid lightgray;
+   
+}
+ 
+.tips_image {
+  border: 1px solid white;
+  border-radius: 50px;
+  object-fit: contain;
+  align-items: center;
+  align-content: center;
+  width: 60px;
+  justify-content: center;
+  height: 60px;
+  margin: 10px;
+}
+.post_image {
+  margin-top: 5px;
+  max-width: 500px;
+  justify-content: center;
+  max-height: 300px;
+
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+.time_tips {
+  margin-top: 20px;
+  justify-content: space-evenly;
+}

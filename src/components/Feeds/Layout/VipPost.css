@@ -1,0 +1,50 @@
+.VipPost {
+  display: flex;
+  justify-content: center;
+   
+   
+}
+.VipPost >form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+
+}
+.viphead {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid lightgray;
+}
+.viphead>h5{
+  margin-left: 10px;
+  margin-right: 10px ;
+  align-items: center;
+  justify-content: center;
+}
+
+.vipbody {
+  display: flex;
+  flex-direction: row;
+}
+.vipbody  >h4{
+   margin-left: 10px;
+   margin-right: 10px;
+   justify-content: center;
+   align-items: center;
+
+}
+.vipbody>h5{
+  color: darkslategrey;
+  margin-top: 4px;
+  
+}
+.vip-foot {
+  display: flex;
+  flex-direction: row; 
+}
+.vip-foot>h4{
+  margin-left: 10px;
+  margin-right: 10px;
+}

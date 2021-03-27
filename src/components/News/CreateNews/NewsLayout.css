@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+}
+.newslayout {
+  margin-left: 20px;
+  padding: 5px;
+  width: 500px;
+  border: 2px solid lightgray;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+/* .tittle {
+  align-items: center;
+  align-content: center;
+} */
+.image {
+  height: 250px;
+  align-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+/* .desc {
+  line-break: normal;
+} */

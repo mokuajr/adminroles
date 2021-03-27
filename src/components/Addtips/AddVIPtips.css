@@ -1,0 +1,10 @@
+.addviptips{
+    margin-top: 10px;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.button > button{
+    border-radius:9px;
+     background-color: lightskyblue;
+}
