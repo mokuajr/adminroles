@@ -1,14 +1,23 @@
 * {
   margin: 0;
 }
+/* desktop view */
 .post {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-   
+  display: flex;  
+   justify-content: center;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
- 
+
+.freetip{
+  border: 1px solid lightgray;
+  border-bottom: 2px solid lightgray;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .tips_form {
   display: flex;
   align-content: center;
@@ -19,10 +28,18 @@
 .countrytips {
   display: flex;
   justify-content: space-evenly;
+  border-bottom: 1px solid lightgray;
 }
 .timestamp{
   border-top: 1px solid lightgray;
+  font-size: 12px; 
    
+}
+.footfree{
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid lightgrey;
 }
  
 .tips_image {
@@ -47,5 +64,10 @@
 }
 .time_tips {
   margin-top: 20px;
+  margin-left: 5px;
   justify-content: space-evenly;
+}
+/* mobile view  */
+@media screen and (max-width: 768px){
+
 }

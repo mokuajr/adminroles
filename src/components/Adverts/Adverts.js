@@ -1,73 +1,34 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { db } from '../Firebase/firebase';
-import AdvertLay from './AdvertLay';
-const delay = 2500;
+import React, { useEffect, useState } from 'react'
+import { db, storage, timestamp } from '../Firebase/firebase';
+import AdvertLay from './AdvertLay'
+
 function Adverts() {
-    const [advert, setAdvert] = useState([])
-    const [index, setIndex] = useState(0);
-    const timeoutRef =  useRef(null);
-
-    function resetTimeout() {
-    if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-    }
-    }
-
+     const [advrts, setAdvrts] = useState([]);
     useEffect(() => {
-        resetTimeout();
-        timeoutRef.current = setTimeout(
-        () =>
-            setIndex((prevIndex) =>
-            prevIndex === advert.length - 1 ? 0 : prevIndex + 1
-            ),
-        delay
-        );
-
-        return () => {
-        resetTimeout();
-        };
-    }, [index]);
-     useEffect(() => {
          db.collection('adverts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       //evry time anew post is added, fire  this code 
-      setAdvert(snapshot.docs.map((doc, index) => ({
+      setAdvrts(snapshot.docs.map(doc => ({
         id: doc.id,
-        index: index,
-        advrt: doc.data()
+        advt: doc.data()
       })))
      })
     },[])
     return (
-        <div className="slideshow" >
-            
-       <div
-         className="slideshowSlider"
-        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-       >
-        {advert.map((advrt, id, index) => (
-            <AdvertLay
-                key={index}  
-                tittle={advrt.tittle}
-                desc={advrt.desc}
-                imageUrl={advrt.imageUrl} 
-            />
-        ))}
-            </div  >
-            <div className="slideshowDots">
-                {
-                    advert.map(({_, idx}) => (
-                    <div
-                        key={idx}
-                        className={`slideshowDot${index === idx ? " active" : ""}`}
-                        onClick={() => {
-                        setIndex(idx);
-                        }}
-                    > </div>
-                    ))
-                }
-            </div>
-        </div> 
-        
+        <div>
+             {
+                advrts.map(({id, advt}) => (
+                <AdvertLay
+                    key={id}  
+                    advertId ={id}
+                    timestamp = {advt.timestamp}
+                    tittle={advt.tittle}
+                    desc={advt.desc}
+                    imageUrl={advt.imageUrl}
+                    
+                />
+                ))
+            }
+        </div>
     )
 }
 

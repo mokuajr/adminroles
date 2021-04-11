@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import * as ROUTES from '../constants/routes';
- import SignOutButton from './SignOut';
-import * as ROLES from '../constants/roles';
 import { AuthUserContext } from './Session';
-import "./Navigation.css"
+import "./Navigation.css";
+import { FaAlignRight } from 'react-icons/fa';
+import {NavLink } from 'react-router-dom';
+
  
 const Navigation = () => (
   <div>
@@ -18,56 +18,75 @@ const Navigation = () => (
     </AuthUserContext.Consumer>  </div>
 );
  
-const NavigationAuth = () => (
-  <div className="nav" >
-    <div className="logotext">
-      <h2 className="sportslay"> SportsLay</h2> 
+const NavigationAuth = () => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+  return (
+    <div className="header">
+      <div className="logo-nav">
+        {/* <div className="logo-container">
+          <h3>Sports-Lay</h3>  
+        </div> */}
+        <div className={click ? "nav-options active" : "nav-options"}> 
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.LANDING}>Home</NavLink>
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.SPORTS}>Sports</NavLink>
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.HOME}> VIP </NavLink>
+          <NavLink className="option mobile-option" onClick={closeMobileMenu}
+            to={ROUTES.ACCOUNT}>Account</NavLink>
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.ADMIN}>Admin </NavLink>
+          
+        </div>
+      </div>
+       
+      <div className="mobile-menu" onClick={handleClick}>
+        {click ? (
+          <FaAlignRight backrground-color="transparent" className="menu-icon" />
+        ) : (
+          <FaAlignRight backrground-color="transparent" className="menu-icon" />
+        )}
+      </div>
     </div>
-    <div className="navigation">
-      <ul  className="navigation">
-        <li className="spacelist" >
-          <Link to={ROUTES.LANDING}>Landing</Link>
-        </li>
-        <li className="spacelist">
-           <Link to={ROUTES.SPORTS}>Sports news</Link>
-        </li>
-        <li className="spacelist">
-          <Link to={ROUTES.HOME}>Home</Link>
-        </li>
-        <li className="spacelist">
-          <Link to={ROUTES.ACCOUNT}>Account</Link>
-        </li>
-          <li className="spacelist">
-            <Link to={ROUTES.ADMIN}>Admin</Link>
-          </li>
-        
-        
-        <li  className="spacelist" >
-          <SignOutButton />
-        </li>
-      </ul>
-    </div>
-  </div>
-);
+  );
+} 
 
-const NavigationNonAuth = () => (
-  <ul className="navigation">
-    <li className="spacelist">
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li className="spacelist">
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-    <li className="spacelist">
-      <Link to={ROUTES.SPORTS}>Sports news</Link>
-    </li>
-    <li className="spacelist">
-      <Link to={ROUTES.VIP}> VIP </Link>
-    </li>
-    <li className="spacelist">
-      <Link to={ROUTES.CONTACT_US}> Contacts </Link>
-    </li>
-  </ul>
-);
+const NavigationNonAuth = () => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+  return (
+    <div className="header">
+      <div className="logo-nav">
+        {/* <div className="logo-container">
+          <h3>Sports-Lay</h3>  
+        </div> */}
+        <div className={click ? "nav-options active" : "nav-options"}> 
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.LANDING}>Home</NavLink>
+          <NavLink className="option mobile-option" onClick={closeMobileMenu}
+            to={ROUTES.SIGN_IN}>Login</NavLink>
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.SPORTS}>Sports</NavLink>
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.VIP}> VIP </NavLink>
+          <NavLink className="option" onClick={closeMobileMenu}
+            to={ROUTES.CONTACT_US}> Contact Us </NavLink>
+        </div>
+      </div>
+       
+      <div className="mobile-menu" onClick={handleClick}>
+        {click ? (
+          <FaAlignRight backrground-color="transparent" className="menu-icon" />
+        ) : (
+          <FaAlignRight backrground-color="transparent" className="menu-icon" />
+        )}
+      </div>
+    </div>
+  );
+}
  
 export default Navigation;

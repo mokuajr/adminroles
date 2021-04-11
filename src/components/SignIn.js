@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { SignUpLink } from './SignUp';
 import { withFirebase } from './Firebase/';
 import * as ROUTES from '../constants/routes';
 import { PasswordForgetLink } from './PasswordForget';
- 
+import './styles.css';
 const SignInPage = () => (
-  <div>
+  <div className="signin">
     <h1>SignIn</h1>
     <SignInForm />
     {/* <SignInGoogle /> */}
     <PasswordForgetLink />
     {/* <SignUpLink /> */}
   </div>
-);
+);  
  
 const INITIAL_STATE = {
   email: '',
@@ -64,78 +64,41 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
  
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
- 
-        {error && <p>{error.message}</p>}
-      </form>
+      <div className="signin">
+        <div className="sighead">
+          <p>
+            To Sign in for VIP you need to be subscribed<br />
+            for more information about our vip subscription plans<br/>
+            visit <Link to={ROUTES.VIP} >VIP</Link>
+          </p>
+        </div>
+        <form onSubmit={this.onSubmit}>
+          
+            <input
+              name="email"
+              value={email}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email Address"
+            />
+            <input
+              name="password"
+              value={password}
+              onChange={this.onChange}
+              type="password"
+              placeholder="Password"
+            />
+           
+          <button disabled={isInvalid} type="submit">
+            Sign In
+          </button>
+  
+          {error && <p>{error.message}</p>}
+        </form>
+      </div>
     );
   }
-}
-// class SignInGoogleBase extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = { error: null };
-//   }
-
-//   onSubmit = event => {
-//     this.props.firebase
-//       .doSignInWithGoogle()
-//       .then(socialAuthUser => {
-//         // Create a user in your Firebase Realtime Database too
-//         return this.props.firebase.user(socialAuthUser.user.uid).set(
-//           {
-//             username: socialAuthUser.user.displayName,
-//             email: socialAuthUser.user.email,
-//             roles: {},
-//           },
-//           { merge: true },
-//         );
-//       })
-//       .then(() => {
-//         this.setState({ error: null });
-//         this.props.history.push(ROUTES.HOME);
-//       })
-//       .catch(error => {
-//         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
-//           error.message = ERROR_MSG_ACCOUNT_EXISTS;
-//         }
-
-//         this.setState({ error });
-//       });
-
-//     event.preventDefault();
-//   };
-
-//   render() {
-//     const { error } = this.state;
-
-//     return (
-//       <form onSubmit={this.onSubmit}>
-//         <button type="submit">Sign In with Google</button>
-
-//         {error && <p>{error.message}</p>}
-//       </form>
-//     );
-//   }
-// }
+} 
 
 const SignInForm = compose(
   withRouter,

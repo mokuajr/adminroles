@@ -1,0 +1,119 @@
+/*  */
+/*  */
+/* mobile vertions */
+@media screen and (max-width: 768px) {
+  /* landing page */
+  .free {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .freetip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(139, 134, 134);
+    margin-right: 5px;
+  }
+  .adverts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(139, 134, 134);
+    margin-right: 5px;
+  }
+}
+
+/* desktops  */
+* {
+  margin: 5px;
+}
+
+/* landing page */
+.free {
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid lightgray;
+}
+.freetip {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  border: 2px solid rgb(139, 134, 134);
+  margin-right: 5px;
+}
+.adverts {
+  display: flex;
+  flex: 0.3;
+  border: 2px solid lightgray;
+  margin-left: 3px;
+}
+
+/* conatcts page */
+.contacts {
+  border: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.contact_us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid lightslategray;
+  margin: 20px;
+  padding: 20px;
+}
+
+.names > input {
+  padding: 5px;
+  size: 30px;
+  font-size: 18px;
+  /* max-width: 500px; */
+  /* min-width: 250px; */
+  justify-content: center;
+  align-items: center;
+}
+.contacts > button {
+  padding: 5px;
+  size: 30px;
+  font-size: 18px;
+  border: 2px solid lightslategray;
+  color: aliceblue;
+  background-color: rgb(7, 63, 60);
+  margin: 10px;
+  border-radius: 12px;
+  padding: 5px;
+}
+.message {
+  border: 1px solid lightgray;
+}
+
+/* signin page */
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid lightgrey;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.signin > form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-width: 300px;
+  align-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}

@@ -1,34 +1,31 @@
 .tipsform {
   display: flex;
+  flex-direction: column;
   margin-left: 20px;
-  max-width: 550px;
-  border: 5px solid lightslategray;
-  background-color: rgb(5, 51, 53);
-  align-items: center;
-  align-content: center;
+  max-width: 550px; 
+  min-width: 200px;
+  align-items: center; 
+  justify-content: center;
 }
 .headertips {
   display: flex;
 }
 .country {
-  max-width: 100%;
+   display: flex;
 }
 
 .teams_tips {
   display: flex;
 }
 .timeandtip {
-  display: flex;
-  flex-direction: column;
+   
 }
 .post__avatar {
   margin: 5px;
   padding: 15px;
 }
 .post_button {
-  margin-top: 40px;
-  background-color: white;
-  size: 25px;
+   
   
 }
 .imagepost > img{

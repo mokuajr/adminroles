@@ -14,7 +14,7 @@ function NewsPost() {
      })
     },[])
     return (
-        <div align-content= "center" justify-content= "center" align-items= "center" >
+        <div   >
             {
                 posts.map(({id, post}) => (
                 <NewsLayout 

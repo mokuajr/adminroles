@@ -13,4 +13,5 @@ export const NEWSBOX = '/admin/newsbox';
 export const SPORTS = '/sports';
 export const VIP = '/vip';
 export const CONTACT_US = '/contacts';
+export const MESSAGES = '/admin/messages';
 export const CREATE_ADVERT = '/admin/post-advert'; 

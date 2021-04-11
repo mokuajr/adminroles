@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  background-color: rgb(247, 247, 247);
+}
+.joinvip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+  border: 2px solid lightslategray;
+  margin: 5px;
+  padding: 5px;
+}
+.head {
+  max-width: 600px;
+}

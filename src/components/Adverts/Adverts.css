@@ -1,0 +1,33 @@
+.advertpost{
+    flex:0.3;
+    max-width: 250px;
+    /* display: inline-block;
+    vertical-align: top; */
+    
+}
+.adverts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    margin-top: 10px;
+    padding: 10px;
+    word-break: break-all;
+
+}
+.desc{
+    overflow-wrap: break-word;
+    max-width: 150px;
+    word-break: break-all;
+}
+.advertsimage{
+    object-fit: contain;
+  
+}
+.advertsimage>img{
+    height: 150px;
+    object-fit: contain;
+}
+
+ 

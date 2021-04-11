@@ -3,7 +3,6 @@ import "./App.css"
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import * as ROUTES from './constants/routes';
-import Navigation from './components/Navigation';
 import Landing from './components/Landing';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
@@ -18,14 +17,15 @@ import NewsBox from './components/News/CreateNews/NewsBox';
 import NewsPost from './components/News/NewsPost';
 import JoinVip from './components/JoinVip';
 import Contacts from './components/Contacts';
+import Messages from './components/Messages';
 import CreateAdvert from './components/Adverts/CreateAdvert'; 
-import UserLay from './components/Users/UserLay';
+import Navigation from './components/Navigation';
  
 const App = () => (
  
   <Router>
-      
     <Navigation  />
+  
     <hr />
 
     <Route exact path={ROUTES.LANDING} component={Landing} />
@@ -42,7 +42,7 @@ const App = () => (
     <Route path={ROUTES.VIP} component= {JoinVip} />
     <Route path={ROUTES.CONTACT_US } component= {Contacts} />
     <Route path={ROUTES.CREATE_ADVERT } component= {CreateAdvert} />
-     <Route path={ROUTES.REG_USERS } component= {UserLay} />
+      <Route path={ROUTES.MESSAGES } component= {Messages} />
   </Router>
   
 

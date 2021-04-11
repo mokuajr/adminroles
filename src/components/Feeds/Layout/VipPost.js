@@ -4,7 +4,7 @@ import "./VipPost.css";
 function VipPost({Away, Home, Vtips, VOdds, Vcountry , Vtime}) {
     return (
         <div className=" VipPost">
-            <form >
+            <div className="postvip" >
                 <div className="viphead">
                     <h5> {Vcountry }</h5>
                     <h5> {Vtime} </h5>
@@ -19,7 +19,7 @@ function VipPost({Away, Home, Vtips, VOdds, Vcountry , Vtime}) {
                     <h4>{VOdds} </h4>
                 </div>
                 
-            </form>
+            </div>
             
         </div>
     )
