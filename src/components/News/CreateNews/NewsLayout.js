@@ -14,8 +14,7 @@ function NewsLayout({ postId, timestamp,  desc,  tittle,  imageUrl, }) {
                 </div>
                 <div className="bodynews">
                     <img className="image" src={imageUrl} alt="" />
-                    <p className="desc">{show ? { desc } : null}
-                      <button onClick={()=>setShow(!show)} >Learn more</button>
+                    <p className="desc">  { desc }  
                     </p>
                 </div>
             </div>

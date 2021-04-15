@@ -3,6 +3,7 @@ import './Adverts.css';
 
 function AdvertLay({timestamp, idx, desc, tittle, imageUrl, }) {
     const [show, setShow] = useState(false);
+   
     return (
         <div className="advertpost" >
             <div className="adverts">
@@ -11,9 +12,8 @@ function AdvertLay({timestamp, idx, desc, tittle, imageUrl, }) {
                 <div className="advertsimage">
                     <img className="image" src={imageUrl} alt="" />
                 </div>
-                <p className="desc">{show ? { desc } : null}
-                      <button onClick={()=>setShow(!show)} >Learn more</button>
-                </p>
+                
+                <p className="desc"> {desc} </p>
             </div>
    
         </div>
